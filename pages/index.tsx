@@ -66,14 +66,14 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="w-full max-w-lg bg-white rounded-2xl shadow-lg p-8 border border-gray-200"
       >
-        <h1 className="text-3xl font-extrabold text-blue-600 text-center mb-6">
+        <h1 className="text-3xl font-extrabold text-blue-700 text-center mb-6">
           Welcome
         </h1>
 
@@ -81,32 +81,32 @@ export default function AuthPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-center text-gray-700"
+            className="text-center text-gray-800"
           >
             {submitted === "login" ? (
               <>
                 <h2 className="text-2xl font-bold text-green-600">Login Berhasil ✅</h2>
-                <p className="mt-2">Selamat datang kembali!</p>
+                <p className="mt-2 text-gray-700">Selamat datang kembali!</p>
               </>
             ) : (
               <>
                 <h2 className="text-2xl font-bold text-green-600">Registrasi Berhasil 🎉</h2>
-                <p className="mt-2">Akunmu sudah dibuat, silakan login!</p>
+                <p className="mt-2 text-gray-700">Akunmu sudah dibuat, silakan login!</p>
               </>
             )}
           </motion.div>
         ) : (
           <Tabs defaultValue="login" className="w-full">
-            <TabsList className="grid grid-cols-2 mb-6 bg-gray-100 rounded-xl p-1">
+            <TabsList className="grid grid-cols-2 mb-6 bg-gray-200 rounded-xl p-1">
               <TabsTrigger
                 value="login"
-                className="data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-700 px-4 py-2 rounded-lg"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-gray-800 px-4 py-2 rounded-lg"
               >
                 Login
               </TabsTrigger>
               <TabsTrigger
                 value="register"
-                className="data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-700 px-4 py-2 rounded-lg"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-gray-800 px-4 py-2 rounded-lg"
               >
                 Register
               </TabsTrigger>
@@ -121,9 +121,9 @@ export default function AuthPage() {
                     placeholder="Email"
                     value={loginData.email}
                     onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
-                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+                  {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
                 </div>
 
                 <div>
@@ -132,16 +132,16 @@ export default function AuthPage() {
                     placeholder="Password"
                     value={loginData.password}
                     onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
-                  {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+                  {errors.password && <p className="text-red-600 text-sm">{errors.password}</p>}
                 </div>
 
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg shadow"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow"
                 >
                   Login
                 </motion.button>
@@ -157,9 +157,9 @@ export default function AuthPage() {
                     placeholder="Nama"
                     value={registerData.name}
                     onChange={(e) => setRegisterData({ ...registerData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
-                  {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+                  {errors.name && <p className="text-red-600 text-sm">{errors.name}</p>}
                 </div>
 
                 <div>
@@ -168,9 +168,9 @@ export default function AuthPage() {
                     placeholder="Email"
                     value={registerData.email}
                     onChange={(e) => setRegisterData({ ...registerData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
-                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+                  {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
                 </div>
 
                 <div>
@@ -179,9 +179,9 @@ export default function AuthPage() {
                     placeholder="Password"
                     value={registerData.password}
                     onChange={(e) => setRegisterData({ ...registerData, password: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
-                  {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+                  {errors.password && <p className="text-red-600 text-sm">{errors.password}</p>}
                 </div>
 
                 <div>
@@ -190,10 +190,10 @@ export default function AuthPage() {
                     placeholder="Konfirmasi Password"
                     value={registerData.confirmPassword}
                     onChange={(e) => setRegisterData({ ...registerData, confirmPassword: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                   {errors.confirmPassword && (
-                    <p className="text-red-500 text-sm">{errors.confirmPassword}</p>
+                    <p className="text-red-600 text-sm">{errors.confirmPassword}</p>
                   )}
                 </div>
 
@@ -201,7 +201,7 @@ export default function AuthPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg shadow"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow"
                 >
                   Register
                 </motion.button>
